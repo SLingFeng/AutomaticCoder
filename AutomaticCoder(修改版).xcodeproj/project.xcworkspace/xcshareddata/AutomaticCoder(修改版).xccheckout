@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>96419206-A001-4EBE-B015-D94F507573FA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AutomaticCoder(修改版)</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6B9F747AAB47219866263CC37A03B4FDEA4CE705</key>
+		<string>https://github.com/yinxianwei/AutomaticCoder-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AutomaticCoder(修改版).xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6B9F747AAB47219866263CC37A03B4FDEA4CE705</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yinxianwei/AutomaticCoder-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6B9F747AAB47219866263CC37A03B4FDEA4CE705</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6B9F747AAB47219866263CC37A03B4FDEA4CE705</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AutomaticCoder(%E4%BF%AE%E6%94%B9%E7%89%88)</string>
+		</dict>
+	</array>
+</dict>
+</plist>
