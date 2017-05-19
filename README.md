@@ -3,7 +3,7 @@ ___
 1. command+w隐藏按钮
 2. 提示优化
 ___
-#AutomaticCoder(修改版)
+#AutomaticCoder
 原作者链接：[https://github.com/zhangxigithub/AutomaticCoder](https://github.com/zhangxigithub/AutomaticCoder)      
 博客地址：[http://zhangxi.me](http://zhangxi.me)    
 
@@ -16,6 +16,7 @@ ___
 [https://github.com/yinxianwei/AutomaticCoder-](https://github.com/yinxianwei/AutomaticCoder-)
 在此版基础上修改
 ___
+#AutomaticCoder(JsonModel版)
 ## 2017-5-19 ##
 
 ### 1.自动解析json，配合JSONModel,不能有重复名字key.
