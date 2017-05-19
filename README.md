@@ -11,6 +11,11 @@ ___
 2. 把复制粘贴的快捷键给加上了。
 
 ---
+#AutomaticCoder(修改版) 
+
+[https://github.com/yinxianwei/AutomaticCoder-](https://github.com/yinxianwei/AutomaticCoder-)
+在此版基础上修改
+___
 ## 2017-5-19 ##
 
 ### 1.自动解析json，配合JSONModel,不能有重复名字key.
