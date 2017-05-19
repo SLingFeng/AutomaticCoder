@@ -1,0 +1,5 @@
+
+@interface #name# : SLFBaseModel
+
+#property# 
+@end
