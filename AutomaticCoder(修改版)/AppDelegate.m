@@ -160,6 +160,7 @@
         JsonValueType type = [self type:[json objectForKey:key]];
         switch (type) {
             case kString:
+                [proterty appendFormat:@"@property (nonatomic, copy) %@ *%@;\n\n", [self typeName:type], key];
             case kNumber:
                 [proterty appendFormat:@"@property (nonatomic, retain) %@ *%@;\n\n", [self typeName:type], key];
                 break;
