@@ -34,7 +34,12 @@
 }
 
 - (IBAction)createClass:(id)sender {
-    
+    _templateH =[[NSMutableString alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"json" ofType:@"txt"]
+                                                       encoding:NSUTF8StringEncoding
+                                                          error:nil];
+    _templateM =[[NSMutableString alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"json2" ofType:@"txt"]
+                                                       encoding:NSUTF8StringEncoding
+                                                          error:nil];
     if (!self.nameTF.stringValue.length) {
         [self message:@"没有输入Class名！" defStr:@""];
         return;
@@ -147,7 +152,7 @@
     NSString *prefix = [self.preTF.stringValue uppercaseString];
     
     if (![name isEqualToString:self.nameTF.stringValue]) {
-        name = [NSString stringWithFormat:@"%@%@Model", prefix, name];
+        name = [NSString stringWithFormat:@"%@%@Model", self.nameTF.stringValue, name];
     }else {
         name = [NSString stringWithFormat:@"%@Model", name];
     }
@@ -161,6 +166,7 @@
         switch (type) {
             case kString:
                 [proterty appendFormat:@"@property (nonatomic, copy) %@ *%@;\n\n", [self typeName:type], key];
+                break;
             case kNumber:
                 [proterty appendFormat:@"@property (nonatomic, retain) %@ *%@;\n\n", [self typeName:type], key];
                 break;
