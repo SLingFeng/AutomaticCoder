@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutomaticCoder(&#x4fee;&#x6539;&#x7248;)/AppDelegate.m"
-            timestampString = "525149584.725704"
+            timestampString = "529939064.537934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-generateClass:forDic:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutomaticCoder(&#x4fee;&#x6539;&#x7248;)/AppDelegate.m"
-            timestampString = "525149584.725704"
+            timestampString = "529939064.538344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-createClass:"
             landmarkType = "7">
          </BreakpointContent>

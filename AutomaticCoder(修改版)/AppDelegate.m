@@ -34,6 +34,7 @@
 }
 
 - (IBAction)createClass:(id)sender {
+    
     _templateH =[[NSMutableString alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"json" ofType:@"txt"]
                                                        encoding:NSUTF8StringEncoding
                                                           error:nil];
@@ -78,7 +79,6 @@
 }
 
 - (void)writeToFile {
-    
     [_templateM replaceOccurrencesOfString:@"#name#"
                                 withString:[NSString stringWithFormat:@"%@Model", self.nameTF.stringValue]
                                    options:NSCaseInsensitiveSearch
@@ -111,6 +111,8 @@
                  atomically:NO
                    encoding:NSUTF8StringEncoding
                       error:nil];
+    _import = [NSMutableString string];
+    _protocol = [NSMutableString string];
 }
 
 - (void)message:(NSString *)str defStr:(NSString *)str2{
@@ -136,6 +138,8 @@
 -(void)generateClass:(NSString *)name forDic:(NSDictionary *)json
 {
 
+   
+    
     //准备模板
     NSMutableString *templateH =[[NSMutableString alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"oneModel_h" ofType:@"txt"]
                                                        encoding:NSUTF8StringEncoding
@@ -149,10 +153,10 @@
     NSMutableString *proterty = [NSMutableString string];
 
     
-    NSString *prefix = [self.preTF.stringValue uppercaseString];
+    NSString *prefix = self.nameTF.stringValue;//[self.preTF.stringValue uppercaseString];
     
     if (![name isEqualToString:self.nameTF.stringValue]) {
-        name = [NSString stringWithFormat:@"%@%@Model", self.nameTF.stringValue, name];
+        name = [NSString stringWithFormat:@"%@%@Model", prefix, name];
     }else {
         name = [NSString stringWithFormat:@"%@Model", name];
     }
@@ -174,16 +178,16 @@
             {
                 if([self isDataArray:[json objectForKey:key]])
                 {
-                    [proterty appendFormat:@"@property (nonatomic, retain) NSMutableArray<%@%@Model> *%@;\n\n", [self.preTF.stringValue uppercaseString], [self uppercaseFirstChar:key], key];
+                    [proterty appendFormat:@"@property (nonatomic, retain) NSMutableArray<%@%@Model> *%@;\n\n", prefix, [self uppercaseFirstChar:key], key];
                     [_import appendFormat:@"#import \"%@%@Model.h\"\n", [self.preTF.stringValue uppercaseString], [self uppercaseFirstChar:key]];
-                    [_protocol appendFormat:@"@protocol %@%@Model <NSObject>\n@end\n\n", [self.preTF.stringValue uppercaseString], [self uppercaseFirstChar:key]];
+                    [_protocol appendFormat:@"@protocol %@%@Model <NSObject>\n@end\n\n", prefix, [self uppercaseFirstChar:key]];
                     [self generateClass:[NSString stringWithFormat:@"%@",[self uppercaseFirstChar:key]] forDic:[[json objectForKey:key]objectAtIndex:0]];
                 }
             }
                 break;
             case kDictionary:
-                [proterty appendFormat:@"@property (nonatomic, retain) %@%@Model *%@;\n\n", [self.preTF.stringValue uppercaseString], [self uppercaseFirstChar:key], key];
-                [_import appendFormat:@"#import \"%@%@Model.h\"\n", [self.preTF.stringValue uppercaseString], [self uppercaseFirstChar:key]];
+                [proterty appendFormat:@"@property (nonatomic, retain) %@%@Model *%@;\n\n", prefix, [self uppercaseFirstChar:key], key];
+                [_import appendFormat:@"#import \"%@%@Model.h\"\n", prefix, [self uppercaseFirstChar:key]];
                 [self generateClass:[NSString stringWithFormat:@"%@",[self uppercaseFirstChar:key]] forDic:[json objectForKey:key]];
                 
                 break;
